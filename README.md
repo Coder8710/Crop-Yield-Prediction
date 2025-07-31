@@ -64,7 +64,7 @@ We trained our model using the **Agriculture Crop Yield Dataset** from Kaggle:
 
 ## 🚀 How to Use the Project
 
-### ** Clone the Repository**
+### ** Clone the Repository **
 ```bash
 git clone https://github.com/yourusername/crop-yield-prediction.git
 cd crop-yield-prediction
