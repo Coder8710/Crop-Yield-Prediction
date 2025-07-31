@@ -1,84 +1,92 @@
 # 🌾 Crop Yield Prediction System
 
-Predict crop yield based on environmental and agricultural parameters using a **CatBoost Machine Learning model**.  
+A **machine learning-based web application** to predict **crop yield (tons/hectare)** based on environmental and crop-specific factors.  
+This project allows farmers, researchers, and agricultural enthusiasts to **estimate potential yield** and make **data-driven decisions**.
 
-🔗 **Project Website**: [Crop Yield Prediction App](https://crop-yield-prediction-jjyapppp2ytilbpmenuu9tsz.streamlit.app/)  
-📊 **Dataset**: [Agriculture Crop Yield Dataset on Kaggle](https://www.kaggle.com/datasets/samuelotiattakorah/agriculture-crop-yield)
+---
+
+## 🔗 Live Demo
+Try the live app here: **[🌱 Crop Yield Prediction Website](https://crop-yield-prediction-jjyapppp2ytilbpmenuu9tsz.streamlit.app/)**
 
 ---
 
 ## 📖 Project Description
+Efficient crop yield prediction helps in:
 
-This project predicts **crop yield (tons/hectare)** using input features like:
+- **Optimizing resource usage** (water, fertilizer, and manpower).  
+- **Planning harvest cycles** to maximize output.  
+- **Mitigating risks** related to unfavorable weather conditions.  
 
-- 🌍 Region  
-- 🪨 Soil Type  
-- 🌱 Crop Type  
-- 🌧 Rainfall (mm)  
-- 🌡 Temperature (°C)  
-- 🧪 Fertilizer Usage  
-- 💧 Irrigation Usage  
-- ⛅ Weather Conditions  
-- 📅 Days to Harvest  
-
-It uses **CatBoost**, a powerful gradient boosting algorithm, to provide accurate yield predictions.
+This web app takes in **environmental factors** like rainfall, temperature, soil type, weather conditions, irrigation, and fertilizer usage, then predicts the **expected yield** for a selected crop.
 
 ---
 
-## 📂 Repository Contents
+## 📊 Dataset
+We trained our model using the **Agriculture Crop Yield Dataset** from Kaggle:
 
-This repository contains:
+🔗 **[Agriculture Crop Yield Dataset](https://www.kaggle.com/datasets/samuelotiattakorah/agriculture-crop-yield)**
 
-1. **`app.py`** – The Streamlit web application.  
-2. **`requirements.txt`** – Python dependencies for the project.  
-3. **`crop_yield_catboost_gpu.cbm`** – Trained CatBoost model (original `.cbm` format).  
-4. **`crop_yield_model.pkl`** – Pickle version of the trained model (for Streamlit deployment).  
-5. **Jupyter Notebook / Python training code** – For training the CatBoost model.  
+**Dataset Features:**
+- Region (North, South, East, West)
+- Soil Type (Clay, Sandy, Loam, Silt, Peaty, Chalky)
+- Crop (Wheat, Rice, Maize, Barley, Soybean, Cotton)
+- Rainfall (mm)
+- Temperature (°C)
+- Fertilizer Used (True/False)
+- Irrigation Used (True/False)
+- Weather Condition (Sunny, Rainy, Cloudy)
+- Days to Harvest (integer)
 
-✅ This repo contains **both the training code** and the **trained model files**.
-
----
-
-## 🧠 Model Used
-
-- **Algorithm**: [CatBoost Regressor](https://catboost.ai/)  
-- **Reason for Selection**: Handles categorical features efficiently, provides high accuracy, and works well with tabular agricultural data.  
-- **Training Steps**:
-  1. Preprocessed the Kaggle crop yield dataset.
-  2. Encoded categorical variables.
-  3. Trained a **CatBoostRegressor** with GPU support for faster training.
-  4. Saved the model in both `.cbm` and `.pkl` formats.
+**Target Variable:** Crop Yield (tons/hectare)
 
 ---
 
-## 🚀 How to Run Locally
+## 🤖 Machine Learning Model
 
-1. **Clone the repository**:
+- **Model Used:** [CatBoost Regressor](https://catboost.ai/)  
+- **Why CatBoost?**
+  - Handles **categorical features** without extra encoding.
+  - Performs well on **tabular datasets**.
+  - GPU/CPU compatible and efficient.  
 
+**Steps followed:**
+1. Preprocessed the dataset (handled categorical and numerical features).  
+2. Split into **train/test sets**.  
+3. Trained a **CatBoost Regressor** with optimized parameters.  
+4. Saved the model as a **pickle (.pkl)** file for deployment.  
+
+**Additional Info:**
+- This repository also **includes the CatBoost training notebook**: `crop_yield_prediction.ipynb`  
+- The **trained `.cbm` model** is included for anyone who wants to load and use the original CatBoost model directly.  
+
+---
+
+## 🚀 How to Use the Project
+
+### **1. Clone the Repository**
 ```bash
 git clone https://github.com/yourusername/crop-yield-prediction.git
 cd crop-yield-prediction
 ```
 
-2. **Install dependencies**:
-
+### **2. Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Run the Streamlit app**:
-
+### **3. Run the App Locally**
 ```bash
 streamlit run app.py
 ```
 
-The app will start locally, and a browser window will open automatically.
+Then open the **local URL** provided in the terminal to use the app.
 
 ---
 
-## 🌐 How to Use the Web App
-
-1. Open the [web app](https://crop-yield-prediction-jjyapppp2ytilbpmenuu9tsz.streamlit.app/).  
-2. Enter the required **crop and environmental details**.  
-3. Click **“Predict Yield”** to get the expected crop yield in **tons/hectare**.  
-4. View the **Prediction History** to check your last predictions.  
+## 📂 Repository Contents
+- **`app.py`** → Streamlit web app  
+- **`crop_yield_model.pkl`** → Pickle model for deployment  
+- **`crop_yield_catboost_gpu.cbm`** → Original CatBoost trained model  
+- **`crop_yield_prediction.ipynb`** → Jupyter notebook for training the model  
+- **`requirements.txt`** → List of required packages  
+- **`README.md`** → Project documentation  
