@@ -61,10 +61,3 @@ We trained our model using the **Agriculture Crop Yield Dataset** from Kaggle:
 - A helper script **`cbm_to_pkl.py`** is provided to **convert `.cbm` models into `.pkl` format** for easier deployment on Streamlit Cloud.
 
 ---
-
-## 🚀 How to Use the Project
-
-### ** Clone the Repository **
-```bash
-git clone https://github.com/yourusername/crop-yield-prediction.git
-cd crop-yield-prediction
