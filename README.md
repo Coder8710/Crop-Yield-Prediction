@@ -58,6 +58,7 @@ We trained our model using the **Agriculture Crop Yield Dataset** from Kaggle:
 **Additional Info:**
 - This repository also **includes the CatBoost training notebook**: `crop_yield_prediction.ipynb`  
 - The **trained `.cbm` model** is included for anyone who wants to load and use the original CatBoost model directly.  
+- A helper script **`cbm_to_pkl.py`** is provided to **convert `.cbm` models into `.pkl` format** for easier deployment on Streamlit Cloud.
 
 ---
 
@@ -67,26 +68,3 @@ We trained our model using the **Agriculture Crop Yield Dataset** from Kaggle:
 ```bash
 git clone https://github.com/yourusername/crop-yield-prediction.git
 cd crop-yield-prediction
-```
-
-### **2. Install Dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-### **3. Run the App Locally**
-```bash
-streamlit run app.py
-```
-
-Then open the **local URL** provided in the terminal to use the app.
-
----
-
-## 📂 Repository Contents
-- **`app.py`** → Streamlit web app  
-- **`crop_yield_model.pkl`** → Pickle model for deployment  
-- **`crop_yield_catboost_gpu.cbm`** → Original CatBoost trained model  
-- **`crop_yield_prediction.ipynb`** → Jupyter notebook for training the model  
-- **`requirements.txt`** → List of required packages  
-- **`README.md`** → Project documentation  
